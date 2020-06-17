@@ -41,7 +41,7 @@ export function deleteUser(userId) {
   return function (dispatch) {
     const yeetUser = async () => {
       try {
-        let res = await axios.delete(`${url}${userId}`);
+        await axios.delete(`${url}${userId}`);
         dispatch({
           type: DELETE_USER,
           payload: userId,

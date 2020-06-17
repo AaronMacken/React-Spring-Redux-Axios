@@ -18,9 +18,7 @@ export default function (state = initialState, action) {
       };
     case DELETE_USER:
       let filteredArray = state.users.filter((user) => {
-        if (user.id !== action.payload) {
-          return user;
-        }
+        return user.id !== action.payload ? user : null;
       });
       return {
         ...state,
